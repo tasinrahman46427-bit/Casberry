@@ -1,0 +1,42 @@
+.flex-carousel {
+  height: 100%;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  overflow-x: auto;
+  padding: 2vh 6vw;
+  cursor: grab;
+  scrollbar-width: none;
+  touch-action: pan-y;
+}
+.flex-carousel::-webkit-scrollbar { display: none; }
+.flex-carousel.is-dragging { cursor: grabbing; }
+.flex-card {
+  position: relative;
+  flex: 0 0 clamp(260px, 28vw, 420px);
+  height: min(68vh, 620px);
+  overflow: hidden;
+  border-radius: 28px;
+  border: 1px solid #ffffff18;
+  background: #ffffff08;
+  user-select: none;
+}
+.flex-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  transition: transform .6s cubic-bezier(.22,1,.36,1);
+}
+.flex-card:hover img { transform: scale(1.04); }
+.flex-card__caption {
+  position: absolute;
+  inset: auto 24px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 12px;
+  text-shadow: 0 2px 18px #000;
+}
+.flex-card__caption strong { font-size: clamp(18px, 2vw, 28px); }
+.flex-card__caption span { color: #ddd5ef; font-size: 12px; text-transform: uppercase; }
